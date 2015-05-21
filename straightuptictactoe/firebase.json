@@ -1,0 +1,9 @@
+{
+  "firebase": "gangstatictactoe",
+  "public": "/Users/sagarsingh/moneysgithub/labs/tictactoe/straightuptictactoe/tictac.html",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

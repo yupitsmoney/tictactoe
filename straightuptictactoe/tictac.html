@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="gangstatictactoe">
+<head>
+
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="../stylesss.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> 
+   <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+   <script src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js"></script>
+   <script type="text/javascript" src="main.js"></script>
+   <script type="text/javascript" src="controller.js"></script>
+   
+  
+   <title>Street fighter tic tac toe</title>
+  
+
+</head>
+
+<body ng-controller="GangstaController">
+<div id="backgroundimg">
+<div id="bigbox">
+
+	<div id="box">
+    <input type="button" class"yabuttons" id="btn1" ng-click="clickBtn(0)" ng-value="game.board[0]"/>
+    <input type="button" class"yabuttons" id="btn2" ng-click="clickBtn(1)" ng-value="game.board[1]"/>
+    <input type="button" class"yabuttons" id="btn3" ng-click="clickBtn(2)" ng-value="game.board[2]"/>
+    <input type="button" class"yabuttons" id="btn4" ng-click="clickBtn(3)" ng-value="game.board[3]"/>
+    <input type="button" class"yabuttons" id="btn5" ng-click="clickBtn(4)" ng-value="game.board[4]"/>
+    <input type="button" class"yabuttons" id="btn6" ng-click="clickBtn(5)" ng-value="game.board[5]"/>
+    <input type="button" class"yabuttons" id="btn7" ng-click="clickBtn(6)" ng-value="game.board[6]"/>
+    <input type="button" class"yabuttons" id="btn8" ng-click="clickBtn(7)" ng-value="game.board[7]"/>
+    <input type="button" class"yabuttons" id="btn9" ng-click="clickBtn(8)" ng-value="game.board[8]"/>
+
+  </div>
+   <input type="button" id="btnReset" ng-click="reset()" value="FIGHT" /> 
+
+</div>
+   
+   <div id="footer">
+   	Created by Money's Dope
+   </div>
+
+</div>
+
+</body>
+
+<script>
+
+var player = 1;
+
+function clickBtn(btn){
+if(player == 1){
+document.getElementById(btn).value = "X";
+document.getElementById(btn).disabled = "disabled";
+player -= 1;
+winner();
+}else{
+document.getElementById(btn).value = "O"
+document.getElementById(btn).disabled = "disabled";
+player += 1;
+winner();
+}
+}
+function winner(){
+  if(
+  document.getElementById("btn1").value == "X" &&
+  document.getElementById("btn2").value == "X" &&
+  document.getElementById("btn3").value == "X" ||
+  document.getElementById("btn4").value == "X" &&
+  document.getElementById("btn5").value == "X" &&
+  document.getElementById("btn6").value == "X" ||
+  document.getElementById("btn7").value == "X" &&
+  document.getElementById("btn8").value == "X" &&
+  document.getElementById("btn9").value == "X" ||
+  document.getElementById("btn1").value == "X" &&
+  document.getElementById("btn4").value == "X" &&
+  document.getElementById("btn7").value == "X" ||
+  document.getElementById("btn2").value == "X" &&
+  document.getElementById("btn5").value == "X" &&
+  document.getElementById("btn8").value == "X" ||
+  document.getElementById("btn3").value == "X" &&
+  document.getElementById("btn6").value == "X" &&
+  document.getElementById("btn9").value == "X" ||
+  document.getElementById("btn1").value == "X" &&
+  document.getElementById("btn5").value == "X" &&
+  document.getElementById("btn9").value == "X" ||
+  document.getElementById("btn3").value == "X" &&
+  document.getElementById("btn5").value == "X" &&
+  document.getElementById("btn7").value == "X"  
+  ){
+    alert("THE WINNER IS X!!!");
+    reset();
+  
+  } else if(
+  document.getElementById("btn1").value == "O" &&
+  document.getElementById("btn2").value == "O" &&
+  document.getElementById("btn3").value == "O" ||
+  document.getElementById("btn4").value == "O" &&
+  document.getElementById("btn5").value == "O" &&
+  document.getElementById("btn6").value == "O" ||
+  document.getElementById("btn7").value == "O" &&
+  document.getElementById("btn8").value == "O" &&
+  document.getElementById("btn9").value == "O" ||
+  document.getElementById("btn1").value == "O" &&
+  document.getElementById("btn4").value == "O" &&
+  document.getElementById("btn7").value == "O" ||
+  document.getElementById("btn2").value == "O" &&
+  document.getElementById("btn5").value == "O" &&
+  document.getElementById("btn8").value == "O" ||
+  document.getElementById("btn3").value == "O" &&
+  document.getElementById("btn6").value == "O" &&
+  document.getElementById("btn9").value == "O" ||
+  document.getElementById("btn1").value == "O" &&
+  document.getElementById("btn5").value == "O" &&
+  document.getElementById("btn9").value == "O" ||
+  document.getElementById("btn3").value == "O" &&
+  document.getElementById("btn5").value == "O" &&
+  document.getElementById("btn7").value == "O"  
+  ){
+    alert("THE WINNER IS O!!!");
+    reset();
+  }
+}
+
+
+function reset() {
+  document.getElementById("btn1").value = ""; 
+  document.getElementById("btn2").value = "";
+  document.getElementById("btn3").value = "";
+  document.getElementById("btn4").value = ""; 
+  document.getElementById("btn5").value = "";
+  document.getElementById("btn6").value = ""; 
+  document.getElementById("btn7").value = ""; 
+  document.getElementById("btn8").value = "";
+  document.getElementById("btn9").value = "";
+  document.getElementById("btn1").disabled = ""; 
+  document.getElementById("btn2").disabled = "";
+  document.getElementById("btn3").disabled = "";
+  document.getElementById("btn4").disabled = ""; 
+  document.getElementById("btn5").disabled = "";
+  document.getElementById("btn6").disabled = ""; 
+  document.getElementById("btn7").disabled = ""; 
+  document.getElementById("btn8").disabled = "";
+  document.getElementById("btn9").disabled = ""; 
+ 
+
+}
+</script>
+</htm
